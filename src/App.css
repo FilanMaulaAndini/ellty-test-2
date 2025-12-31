@@ -11,7 +11,7 @@
 .page-selector {
   width: 370px;
   height: 326px;
-  background: white;
+  background: var(--background);
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -24,8 +24,8 @@
 }
 
 .divider {
-  height: 1px;
-  background-color: #e5e7eb;
+  height: 0.7px;
+  background-color: var(--color-light-grey);
   margin: 8px 0 8px 0;
   flex-shrink: 0;
 }
@@ -67,10 +67,6 @@
   user-select: none;
 }
 
-.page-item-text {
-  color: #333;
-}
-
 .checkbox-wrapper {
   position: relative;
 }
@@ -82,7 +78,7 @@
 .checkmark {
   width: 23px;
   height: 23px;
-  border: 1px solid var(--color-grey);
+  border: 1px solid var(--color-light-grey);
   border-radius: 6px;
   position: relative;
   transition: all 0.2s ease;
@@ -98,7 +94,7 @@
   left: 6px;
   height: 15.64px;
   width: 9px;
-  border: 1px solid white;
+  border: 1px solid var(--background);
   border-width: 0 1px 1px 0;
   transform: rotate(45deg);
 }
@@ -108,18 +104,18 @@
   left: 6px;
   height: 15.64px;
   width: 9px;
-  border: 1px solid white;
+  border: 1px solid var(--background);
   border-width: 0 1px 1px 0;
   transform: rotate(45deg);
 }
 
 .page-item label:hover .checkmark {
-  border-color: #9ca3af;
+  border-color: var(--color-grey);
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .page-item label:hover .checkmark.checked {
-  border-color: #9ca3af;
+  border-color: var(--color-grey);
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
   background-color: #2469F6;
 }
@@ -129,7 +125,7 @@
   left: 6px;
   height: 15.64px;
   width: 9px;
-  border: 1px solid grey;
+  border: 1px solid var(--color-secondary);
   border-width: 0 1px 1px 0;
   transform: rotate(45deg);
 }
@@ -139,11 +135,11 @@
   left: 6px;
   height: 15.64px;
   width: 9px;
-  border: 1px solid white;
+  border: 1px solid var(--background);
   border-width: 0 1px 1px 0;
   transform: rotate(45deg);
 }
 
 .button-wrapper {
-  padding: 10px 0px;
+  padding: 10px 0px 10px 0px;
 }

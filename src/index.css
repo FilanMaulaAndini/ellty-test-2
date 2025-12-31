@@ -3,12 +3,9 @@
   --foreground: #fafafa;
 
   --color-primary: #1F2128;
-  --color-secondary: #404040;
-  /* --color-light: #ffffff;
-  --color-text-dark: #333333; */
-  --color-grey: #CDCDCD;
-  /* --color-light-grey: #e0e0e0;
-  --color-off-white: #f9fafb; */
+  --color-secondary: #878787;
+  --color-grey: #BDBDBD;
+  --color-light-grey: #CDCDCD;
 
   /* Status / Semantic Colors */
   --color-success: #16a34a;

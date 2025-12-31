@@ -33,7 +33,7 @@ function App() {
         <div className="all-pages-section">
           <div className="page-item">
             <label>
-              <span className="page-item-text">All pages</span>
+              <span>All pages</span>
               <div className="checkbox-wrapper">
                 <input
                   type="checkbox"
@@ -45,9 +45,6 @@ function App() {
                     selectedPages.length === pages.length ? "checked" : ""
                   }`}
                 >
-                  {/* {selectedPages.length === pages.length && (
-                    <div className="checkmark-icon" />
-                  )} */}
                   <div
                     className={`checkmark-icon ${
                       selectedPages.length === pages.length
@@ -67,7 +64,7 @@ function App() {
           {pages.map((page) => (
             <div key={page} className="page-item">
               <label>
-                <span className="page-item-text">{page}</span>
+                <span>{page}</span>
                 <div className="checkbox-wrapper">
                   <input
                     type="checkbox"

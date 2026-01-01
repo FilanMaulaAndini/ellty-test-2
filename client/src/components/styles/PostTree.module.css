@@ -1,0 +1,22 @@
+/* PostTree.module.css */
+
+.noPosts {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+}
+
+.noPosts p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.noPosts p:last-child {
+  margin-bottom: 0;
+}
+
+.postsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

@@ -70,7 +70,7 @@ export const PostNode: React.FC<PostNodeProps> = ({ post }) => {
     //const result = calculateResult(post.result, operation, numValue);
 
     const json = {
-      rightOperand: parseInt(value),
+      rightOperand: parseFloat(value),
       operation: operation,
     };
 

@@ -33,8 +33,6 @@ const LoginPage: React.FC = () => {
         redirect: false,
       });
 
-      console.log("signIn result:", result);
-
       if (result?.error) {
         console.error("Login failed:", result.error);
         return;

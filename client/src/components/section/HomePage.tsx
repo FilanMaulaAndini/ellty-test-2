@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { PostTree } from "./PostTree";
 import { CreateStart } from "./CreateStart";
 import { useRouter } from "next/navigation";

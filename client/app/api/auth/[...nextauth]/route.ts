@@ -30,8 +30,6 @@ import CredentialsProvider from "next-auth/providers/credentials";
 //             console.error("Invalid login response:", data);
 //             return null;
 //           }
-      
-//           console.log("✅ User authenticated:", data.user.email);
           
 //           // Return user object with token
 //           return {
@@ -122,7 +120,7 @@ export const authOptions: NextAuthOptions = {
     error: "/login",  
   },
 
-    session: { strategy: "jwt",  maxAge: 60 * 60 },
+    session: { strategy: "jwt",  maxAge: 7 * 24 * 60 * 60 },
     callbacks: {
         async jwt({ token, user }) {
             if (user) {

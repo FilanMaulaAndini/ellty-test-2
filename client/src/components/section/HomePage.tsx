@@ -23,7 +23,7 @@ const HomePage: React.FC = () => {
     <div className={styles.container}>
       <header className={styles.header}>
         <div className={styles.headerInner}>
-          <h1 className={styles.headerTitle}>Number Discussion</h1>
+          <h1 className={styles.headerTitle}>Number Post</h1>
           <div className={styles.headerButtons}>
             {session ? (
               <>
@@ -60,7 +60,7 @@ const HomePage: React.FC = () => {
       <div className={styles.content}>
         {session && <CreateStart />}
         <div className={styles.card}>
-          <h2 className={styles.cardTitle}>All Discussions</h2>
+          <h2 className={styles.cardTitle}>All Posts</h2>
           <PostTree />
         </div>
       </div>

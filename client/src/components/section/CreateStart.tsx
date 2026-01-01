@@ -6,12 +6,12 @@ import postApi from "@/rest_api/post";
 import styles from "../styles/CreateStart.module.css";
 
 export const CreateStart: React.FC = () => {
-  const [value, setValue] = useState<number>(0);
+  const [value, setValue] = useState<string>('');
   const { refetch } = useAuth();
 
   const createSubmit = async () => {
     const json = {
-      value: value,
+      value: parseInt(value),
     };
 
     try {
@@ -37,7 +37,7 @@ export const CreateStart: React.FC = () => {
 
     //   addPost(post);
     createSubmit();
-    setValue(0);
+    setValue('');
   };
 
   return (
@@ -49,7 +49,7 @@ export const CreateStart: React.FC = () => {
         <input
           type="number"
           value={value}
-          onChange={(e) => setValue(parseInt(e.target.value))}
+          onChange={(e) => setValue(e.target.value)}
           placeholder="Enter a number"
           step="any"
           className={styles.input}

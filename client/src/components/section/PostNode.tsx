@@ -25,7 +25,7 @@ export const PostNode: React.FC<PostNodeProps> = ({ post }) => {
   );
   const [value, setValue] = useState<string>("");
   const { refetch } = useAuth();
-  const { data: session, status } = useSession();
+  const { data: session, status } = useSession({ required: false });
 
   const formatDate = (dateString: string): string => {
     const date = new Date(dateString);

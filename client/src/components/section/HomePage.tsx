@@ -8,7 +8,7 @@ import { useSession, signOut } from "next-auth/react";
 import styles from "../styles/HomePage.module.css";
 
 const HomePage: React.FC = () => {
-  const { data: session, status } = useSession();
+  const { data: session, status } = useSession({ required: false });
   const router = useRouter();
 
   const onShowRegister = () => {

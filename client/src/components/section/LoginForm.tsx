@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import authApi from "@/api/auth";
+import authApi from "@/rest_api/auth";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import styles from "../styles/Login.module.css";

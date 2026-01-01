@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useAuth } from "./AuthContext";
 import { useSession } from "next-auth/react";
 import { Node } from "@/app/shared/types/post";
-import postApi from "@/api/post";
+import postApi from "@/rest_api/post";
 import styles from "../styles/PostNode.module.css";
 
 interface PostNodeProps {

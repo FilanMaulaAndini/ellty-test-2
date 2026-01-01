@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import authApi from "@/api/auth";
+import authApi from "@/rest_api/auth";
 import { useRouter } from "next/navigation";
 import { RegisterResponse } from "@/app/shared/types/register";
 import styles from "../styles/Register.module.css";

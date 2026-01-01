@@ -2,7 +2,7 @@
 
 import React, { useState, createContext, useContext, useEffect, ReactNode } from 'react';
 import { Node } from '@/app/shared/types/post';
-import postApi from '@/api/post';
+import postApi from '@/rest_api/post';
 
 interface User {
   id: string;

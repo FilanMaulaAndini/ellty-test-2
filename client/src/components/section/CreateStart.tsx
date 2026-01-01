@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useAuth } from "./AuthContext";
-import postApi from "@/api/post";
+import postApi from "@/rest_api/post";
 import styles from "../styles/CreateStart.module.css";
 
 export const CreateStart: React.FC = () => {

@@ -51,7 +51,7 @@ export const login = async (req: Request, res: Response) => {
     .eq("id", data.user.id)
     .maybeSingle<Profile>();
 
-//   console.log("profile", profileData, profileError);
+  console.log("profile", profileData, profileError);
   if (profileError) {
     return res.status(500).json({ message: "Failed to fetch profile" });
   }

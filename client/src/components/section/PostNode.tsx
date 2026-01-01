@@ -66,9 +66,6 @@ export const PostNode: React.FC<PostNodeProps> = ({ post }) => {
     console.log("submit", value, operation);
     if (!value || !session) return;
 
-    //const numValue = parseFloat(value);
-    //const result = calculateResult(post.result, operation, numValue);
-
     const json = {
       rightOperand: parseFloat(value),
       operation: operation,
@@ -81,18 +78,6 @@ export const PostNode: React.FC<PostNodeProps> = ({ post }) => {
       console.error(error);
     }
 
-    //   const reply: Node = {
-    //     id: Date.now().toString(),
-    //     author: user.username,
-    //     type: 'response',
-    //     value: numValue,
-    //     operation,
-    //     result,
-    //     created_at: new Date().toISOString(),
-    //     children: []
-    //   };
-
-    //   addReply(post.id, reply);
     setValue("");
     setShowReplyForm(false);
   };

@@ -36,9 +36,6 @@ class BaseApiFetch {
   #getToken = async (): Promise<string | null> => {
     try {
       const session = await getSession();
-
-      console.log("SESSION:", session);
-
       return session?.accessToken ?? null;
     } catch (error) {
       console.error("GET TOKEN ERROR:", error);

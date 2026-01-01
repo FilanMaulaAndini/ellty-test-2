@@ -42,7 +42,6 @@ export const PostNode: React.FC<PostNodeProps> = ({ post }) => {
       })
     );
   };
-  console.log(value);
   const calculateResult = (
     leftValue: number,
     op: string,
@@ -63,7 +62,6 @@ export const PostNode: React.FC<PostNodeProps> = ({ post }) => {
   };
 
   const handleReplySubmit = async () => {
-    console.log("submit", value, operation);
     if (!value || !session) return;
 
     const json = {
@@ -81,7 +79,6 @@ export const PostNode: React.FC<PostNodeProps> = ({ post }) => {
     setValue("");
     setShowReplyForm(false);
   };
-  console.log(post);
   return (
     <li className={styles.listItem}>
       <div className={styles.card}>

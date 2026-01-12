@@ -10,6 +10,7 @@ const LoginPage: React.FC = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
 
   const onShowRegister = () => {
@@ -21,6 +22,7 @@ const LoginPage: React.FC = () => {
   };
 
   const loginSubmit = async () => {
+    setIsLoading(true);
     const json = {
       username: username,
       password: password,
@@ -35,13 +37,14 @@ const LoginPage: React.FC = () => {
 
       if (result?.error) {
         console.error("Login failed:", result.error);
-        return;
+        return setIsLoading(false);;
       }
 
       onShowHomePage();
     } catch (error) {
       console.error(error);
     }
+    setIsLoading(false);
   };
 
   const handleSubmit = (): void => {
@@ -82,8 +85,8 @@ const LoginPage: React.FC = () => {
         </div>
 
         <div className={styles.buttonContainer}>
-          <button className={`${styles.button} ${styles.loginBtn}`} onClick={handleSubmit}>
-            Login
+          <button className={`${styles.button} ${styles.loginBtn}`} disabled={isLoading} onClick={handleSubmit}>
+            {isLoading? 'Verifying...' : 'Login'}
           </button>
         </div>
 

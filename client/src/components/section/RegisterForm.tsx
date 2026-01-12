@@ -42,6 +42,7 @@ const RegisterPage: React.FC = () => {
   const [error, setError] = useState<string>("");
   const [data, setData] = useState<RegisterResponse | null>(null);
   const [isChecking, setIsChecking] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData>({
     username: "",
     email: "",
@@ -122,6 +123,7 @@ const RegisterPage: React.FC = () => {
   };
 
   const registerSubmit = async () => {
+    setIsLoading(true);
     const json = {
       email: formData.email,
       password: formData.password,
@@ -135,7 +137,9 @@ const RegisterPage: React.FC = () => {
     } catch (error: any) {
       setError(error?.message || "Registration failed");
       console.error(error);
+      setIsLoading(false);
     }
+    setIsLoading(false);
   };
 
   const handleSubmit = (): void => {
@@ -154,7 +158,7 @@ const RegisterPage: React.FC = () => {
     }
     registerSubmit();
   };
-
+console.log(isLoading)
   return (
     <div className={styles.container}>
       <div className={styles.card}>
@@ -214,8 +218,8 @@ const RegisterPage: React.FC = () => {
           />
         </div>
 
-        <button className={styles.button} onClick={handleSubmit}>
-          Register
+        <button className={styles.button} disabled={isLoading} onClick={handleSubmit}>
+          {isLoading ? 'Authenticating...' : 'Register'}
         </button>
       </div>
     </div>

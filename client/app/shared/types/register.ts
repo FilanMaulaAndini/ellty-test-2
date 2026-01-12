@@ -6,3 +6,9 @@ export interface RegisterResponse {
     username?: string;
   };
 }
+
+export interface CheckUsernameResponse {
+  available: boolean;
+  username: string;
+
+}

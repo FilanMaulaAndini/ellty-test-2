@@ -1,4 +1,4 @@
-import { RegisterResponse } from '@/app/shared/types/register';
+import { CheckUsernameResponse, RegisterResponse } from '@/app/shared/types/register';
 import BaseApiFetch from './base'
 
 interface RegisterPayload {
@@ -7,8 +7,12 @@ interface RegisterPayload {
     username: string;
   }
 
+  interface CheckUsernamePayload {
+    username: string;
+  }
+
   interface LoginPayload {
-    email: string;
+    username: string;
     password: string;
   }
   
@@ -24,6 +28,12 @@ interface RegisterPayload {
   class AuthApi extends BaseApiFetch {
     async register(json: RegisterPayload): Promise<RegisterResponse> {
       return this.fetch('/auth/register', 'POST', {
+        json,
+      });
+    }
+
+    async checkUsername(json: CheckUsernamePayload): Promise<CheckUsernameResponse> {
+      return this.fetch('/auth/check-username', 'POST', {
         json,
       });
     }

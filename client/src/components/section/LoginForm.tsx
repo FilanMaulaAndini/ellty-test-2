@@ -7,7 +7,7 @@ import { signIn } from "next-auth/react";
 import styles from "../styles/Login.module.css";
 
 const LoginPage: React.FC = () => {
-  const [email, setEmail] = useState<string>("");
+  const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
   const router = useRouter();
@@ -22,13 +22,13 @@ const LoginPage: React.FC = () => {
 
   const loginSubmit = async () => {
     const json = {
-      email: email,
+      username: username,
       password: password,
     };
     try {
       const response = await authApi.login(json);
       const result = await signIn("credentials", {
-        email: email,
+        username: username,
         password: password,
         redirect: false,
       });
@@ -45,7 +45,7 @@ const LoginPage: React.FC = () => {
   };
 
   const handleSubmit = (): void => {
-    if (!email || !password) {
+    if (!username || !password) {
       setError("Please fill in all fields");
       return;
     }
@@ -60,12 +60,12 @@ const LoginPage: React.FC = () => {
         {error && <div className={styles.error}>{error}</div>}
 
         <div className={styles.formGroup}>
-          <label className={styles.label}>Email</label>
+          <label className={styles.label}>Username</label>
           <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
+            type="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Enter your username"
             className={styles.input}
           />
         </div>
